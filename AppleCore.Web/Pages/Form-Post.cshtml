@@ -1,0 +1,24 @@
+﻿@page
+@model FormPostModel
+@{
+    ViewData["Title"] = "Form Post";
+}
+
+<hgroup>
+    <h2>@ViewData["Title"]</h2>
+    <h3>@Model.Message</h3>
+</hgroup>
+
+<p>Fill fields.</p>
+
+<partial name="SubFolder/_Info" />
+
+<div asp-validation-summary="ModelOnly"></div>
+
+<div asp-validation-summary="All"></div>
+
+<form method="post">
+    First name * : <input asp-for="FirstName" /><br />
+    Surname : <input asp-for="Surname" /><br />
+    <button type="submit">Submit This!</button>
+</form>

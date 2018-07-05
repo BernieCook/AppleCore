@@ -1,0 +1,38 @@
+﻿@page
+@model ApiCallModel
+@{
+    ViewData["Title"] = "API Call";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<ol id="result">
+    <li>Loading...</li>
+</ol>
+
+@section Scripts {
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            var options = {
+                'url': '/api/users',
+                'type': 'GET',
+                'dataType': 'json',
+            };
+            options.success = function (data) {
+                $('#result').empty();
+                data.forEach(function (element) {
+                    $('#result').append("<li>" + element + "</li>");
+                });
+            };
+            options.error = function () {
+                alert("Error while calling the Web API!");
+            };
+
+            $.ajax(options);
+
+        });
+
+    </script> 
+}

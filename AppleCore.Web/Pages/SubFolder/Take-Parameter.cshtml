@@ -1,0 +1,11 @@
+﻿@page "{id}/{firstName}/{surname?}"
+@model TakeParameterModel
+@{
+    ViewData["Title"] = "Take Parameter";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>Id: <strong>@Model.Id</strong></p>
+<p>First name: <strong>@Model.FirstName</strong></p>
+<p>Surname: <strong>@Model.Surname</strong></p>

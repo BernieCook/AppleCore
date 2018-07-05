@@ -1,0 +1,25 @@
+﻿@page
+@model AboutNewModel
+@{
+    ViewData["Title"] = "About";
+}
+
+<hgroup>
+    <h2>@ViewData["Title"]</h2>
+    <h3>@Model.Message</h3>
+    <h4>@Model.SubHeading</h4>
+</hgroup>
+
+<p>Fill in the address field.</p>
+
+<partial name="SubFolder/_Info" />
+
+<div asp-validation-summary="ModelOnly"></div>
+
+<div asp-validation-summary="All"></div>
+
+<form method="post">
+    Address line 1 : <input asp-for="AddressLineOne" /><br />
+    Address line 2 : <input asp-for="AddressLineTwo" /><br />
+    <button type="submit">Submit This!</button>
+</form>
