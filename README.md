@@ -1,0 +1,3 @@
+# AppleCore
+
+Work in progress.
